@@ -1,5 +1,16 @@
 mysql> use lms;
 Database changed
+mysql> create  table category;
+mysql> desc table category;
++----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table    | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | category | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    3 |   100.00 | NULL  |
++----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+mysql> insert into category values(1,"Software");
+mysql> insert into category values(2,"Electrical");
+mysql> insert into category values(3,"Mechanical");
 mysql> select * from category;
 +----+---------------+
 | id | category_name |
@@ -9,6 +20,17 @@ mysql> select * from category;
 |  3 | Mechanical    |
 +----+---------------+
 3 rows in set (0.01 sec)
+mysql> create table book;
+mysql> desc table book;
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | book  | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    3 |   100.00 | NULL  |
++----+-------------+-------+------------+------+---------------+------+---------+------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+mysql> insert into book values(1,"BalaGuruSwamy",1,"C");
+mysql> insert into book values(2,"Louis Nashelsky",2,"Electronic Devices and Circuit Theory ");
+mysql> insert into book values(3,"K. Eric Drexler",3,"Engines of Creation");
 
 mysql> select * from book;
 +----+------------------+-------------+---------------------------------------+
